@@ -4,14 +4,13 @@
   left: 15%;
       text-align: center;
       color: black ;
-      background-color: rgba(241, 225, 241, 0.312)
+      background-color: rgba(247, 242, 247, 0.611)
 }
 .target{
   max-width: 1000px;
-  left: 15%;
   text-align: center;
   color: black ;
-  background-color: rgba(241, 225, 241, 0.312)
+  background-color: rgba(247, 242, 247, 0.611)
 
 }
 body {
