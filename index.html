@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Pagina Web</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+    <div id="particles-js"></div>
+    <div  class="container " id="app">
+    
+    <div class="row">
+        <div class="col-12 col-md-9 ">
+            <div class="card">
+                <div  style="font-weight: 700;"class="card-header">Registro Clientes</div>
+                <div class="card-body">
+                    <form id="frmCliente" @reset.prevent="nuevoCliente" v-on:submit.prevent="guardarCliente">
+                        <div class="row p-1">
+                            <div class="col-3 col-md-5">
+                                <label  style="font-weight: 700;" for="txtCodigoCliente">Codigo:</label>
+                            </div>
+                            <div class="col-4 col-md-2">
+                                <input required pattern="[0-9]{3}" 
+                                    title="Ingrese un codigo de Alumno de 3 digitos"
+                                        v-model="cliente.codigo" type="text" class="form-control" name="txtCodigoCliente" id="txtCodigoCliente">
+                            </div>
+                        </div>
+
+                        <div class="row p-1">
+                            <div class="col-3 col-md-5">
+                                <label  style="font-weight: 700;" for="txtNombreCliente">Nombre</label>
+                            </div>
+                            <div class="col-4 col-md-3">
+                                <input required pattern="[A-Za-zÑñáéíóú ]{3,75}"
+                                    v-model="cliente.nombre" type="text" class="form-control" name="txtNombreCliente" id="txtNombreCliente">
+                            </div>
+                        </div>
+
+                        <div class="row p-1">
+                            <div class="col-3 col-md-5">
+                                <label  style="font-weight: 700;" for="txtAutorCliente">Direccion:</label>
+                            </div>
+                            <div class="col-4 col-md-3">
+                                <input required pattern="[A-Za-zÑñáéíóú|0-9 ]{3,75}"
+                                    v-model="cliente.direccion" type="text" class="form-control" name="txtAutorCliente" id="txtAutorCliente">
+                            </div>
+                        </div>
+
+
+                        <div class="row p-1">
+                            <div class="col-3 col-md-5">
+                                <label  style="font-weight: 700;" for="txtZonaCliente">Zona:</label>
+                            </div>
+                            <div class="col-4 col-md-2">
+                                <select                      
+                                        v-model="cliente.zona"  class="form-control" name="txtZonaCliente" id="txtZonaCliente">
+                                        <option value="Rural">Rural</option>
+                                        <option value="Urbana">Urbana</option>
+                                    </select> 
+                            </div>
+                        </div>
+                        
+
+                        <div class="row p-1">
+                            <div class="col-3 col-md-5">
+                                <input class="btn btn-primary" type="submit" 
+                                    value="Enviar">
+                            </div>
+                            <div class="col-3 col-md-2">
+                                <input class="btn btn-warning" type="reset" value="Nuevo">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div  class="col-12 col-md-12 position-absolute bottom-0 end-0">
+                        <div  class="target">
+                            <div  style="font-weight: 700;" class="card-header">Clientes Registrados</div>
+                            <div class="card-body">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Buscar:</th>
+                                            <th colspan="8"><input type="text" class="form-control" v-model="buscar"
+                                                @keyup="listarClientes()"
+                                                placeholder="Buscar por nombre o codigo"></th>
+                                        </tr>
+                                        <tr>
+                                            <th>Codigo</th>
+                                            <th>Nombre</th>
+                                            <th>Direccion</th>
+                                            <th>Zona</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr  style="font-weight: 700;" v-for="cliente in clientes" :key="cliente.idCliente" @click="modificarCliente(cliente)" >
+                                            <td>{{ cliente.codigo }}</td>
+                                            <td>{{ cliente.nombre }}</td>
+                                            <td>{{ cliente.direccion}}</td>
+                                            <td>{{ cliente.zona}}</td> 
+                                            <td><button class="btn btn-danger" @click="borrarCliente(cliente)">Eliminar</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+        </div >
+            </div>
+        </div>
+        
+        <div class="count-particles">
+        
+            
+        </div>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
+        <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+        <script src="Style.js"></script>
+         <script>
+        
+                 const { createApp } = Vue;
+                createApp({
+                    data() {
+                        return {
+                            db: '',
+                            accion:'nuevo',
+                            buscar: '',
+                            clientes: [],
+                            cliente:{
+                                idCliente : '',
+                                codigo : '',
+                                nombre : '',
+                                direccion :  '',
+                                zona : '',
+                            }
+                        }
+                    },
+                    methods:{
+                        guardarCliente(){
+                            this.listarClientes();
+                            if(this.accion==='nuevo'){
+                                this.cliente.idCliente = new Date().getTime().toString(16);
+                                this.clientes.push( JSON.parse( JSON.stringify(this.cliente) ) );
+                            }else if(this.accion==='modificar'){
+                                let index = this.clientes.findIndex(cliente=>cliente.idCliente==this.cliente.idCliente);
+                                this.clientes[index] = JSON.parse( JSON.stringify(this.cliente) );
+                            }else if(this.accion==='borrar'){
+                                let index = this.clientes.findIndex(cliente=>cliente.idCliente==this.cliente.idCliente);
+                                this.clientes.splice(index,1);
+                            }
+                            localStorage.setItem("clientes", JSON.stringify(this.clientes) );
+                            this.nuevoCliente();
+                        },
+                        borrarCliente(cliente){
+                            if( confirm(`Se va eliminar a ${cliente.nombre}?`) ){
+                                this.accion='borrar';
+                                this.cliente=cliente;
+                                this.guardarCliente();
+                            }
+                        },
+                        nuevoCliente(){
+                            this.accion = 'nuevo';
+                            this.cliente.idCliente = '';
+                            this.cliente.codigo = '';
+                            this.cliente.nombre = '';
+                            this.cliente.direccion = '';
+                            this.cliente.zona = '';
+                            
+                        },
+                        modificarCliente(cliente){
+                            this.accion = 'modificar';
+                            this.cliente = cliente;
+                        },
+                        listarClientes(){
+                            this.clientes = JSON.parse( localStorage.getItem('clientes') || "[]" )
+                                .filter(cliente=>cliente.nombre.toLowerCase().indexOf(this.buscar.toLowerCase())>-1||
+                                cliente.codigo.indexOf(this.buscar)>-1 ||
+                                cliente.direccion.indexOf(this.buscar)>-1 || 
+                                cliente.zona.indexOf(this.buscar)>-1
+                                );
+                        }
+                    },
+                    
+                }).mount('#app');
+            </script>
+</body>
+</html>
