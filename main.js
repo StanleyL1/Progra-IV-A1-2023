@@ -1,12 +1,10 @@
-//const { createApp } = Vue;//exclusivo de la version 3 de vue 
 var db;
-//createApp({
     var app = new Vue ({
         el: '#app',
     
     data: {
         forms:{
-            docente     : {mostrar:false},
+            docente     : {mostrar:true},
             alumno      : {mostrar:false},
             materia     : {mostrar:false},
             matricula   : {mostrar:false},
@@ -15,10 +13,16 @@ var db;
 
     },
     methods:{
-        abrirFormulario(form){
-            this.forms[form].mostrar = !this.forms[form].mostrar;
-            this.$refs[from].listar();
+        abrirFormulario(form) {
+            for (var key in this.forms) {
+                if (key !== form) {
+                    this.forms[key].mostrar = false;
+                }
+            }
+            this.forms[form].mostrar = true;
+            this.$refs[form].listar();
         },
+        
         abrirBD(){
             let indexDB = indexedDB.open('db_sistema_academico',1);
             indexDB.onupgradeneeded=e=>{
