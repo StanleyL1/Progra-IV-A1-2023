@@ -1,0 +1,140 @@
+ 
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 1px;
+    overflow: hidden;
+    background-color: #0b1e4b; 
+  }
+
+  li {
+    float: left;
+    border-right: 1px solid white; 
+  }
+
+  li:last-child {
+    border-right: none; 
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 8px 10px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: #07386c; 
+  }
+
+  .right-buttons {
+    float: right;
+  }
+
+  .right-buttons li {
+    float: none;
+    display: inline-block;
+  }
+
+
+  .container {
+    background-color: #0b1e4b;
+    height: 600px; 
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px auto ;
+ 
+ }
+ 
+ .container h4 {
+    font-family: "Arial", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(7, 7, 54);
+  }
+ 
+ .container h1 {
+    font-family: "Arial", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(7, 7, 54);
+  }
+ 
+  .container h2 {
+    font-family: "Arial", sans-serif;
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
+  }
+  .text {
+    margin-right: 10px;
+    font-size: 16px;
+    color: white;
+    padding: 3px;
+  }
+
+  .link {
+    padding: 1px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .panels-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 10px;
+  }
+
+  .panel-blanco {
+    font-family: "Arial", sans-serif;
+    background-color: white;
+    color: black;
+    width: 250px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .panel-blanco2 {
+    font-family: "Arial", sans-serif;
+    background-color: white;
+    color: black;
+    width: 250px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .precio {
+    font-size: 50px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+  .Seleccionar{
+    background-color:  #08427f ;
+    color: white;
+    width: 150px;
+  }
+  .footer {
+    background-color: #0b1e4b;
+    color: white;
+    text-align: center;
+    padding: 4%;
+    width: 219%;
+    margin-top: auto;
+    
+  }
