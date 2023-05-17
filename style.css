@@ -18,16 +18,19 @@
   }
 
   li a {
-    display: block;
     color: white;
     text-align: center;
-    padding: 8px 10px;
+    padding: 8px 15px;
     text-decoration: none;
   }
 
   li a:hover {
     background-color: #07386c; 
   }
+   
+.Panel-bajo{
+    color: white;
+}
 
   .right-buttons {
     float: right;
@@ -133,8 +136,8 @@
     background-color: #0b1e4b;
     color: white;
     text-align: center;
-    padding: 4%;
+    padding: 1%;
     width: 219%;
-    margin-top: auto;
+   margin-top: 15%;
     
   }
