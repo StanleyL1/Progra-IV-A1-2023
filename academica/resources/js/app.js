@@ -1,5 +1,6 @@
 import './bootstrap';
 import { createApp } from 'vue';
+import alertifyjs from 'alertifyjs';
 window.db = "";
 
 import alumno from './components/AlumnoComponent.vue';
@@ -38,9 +39,11 @@ const app = createApp({
             };
             indexDB.onsuccess= e=>{
                 db = e.target.result;
+                alertifyjs.success('Sistema LISTO.');
             };
             indexDB.onerror= e=>{
                 console.error( e );
+                alertifyjs.error('Error: ' + e);
             };
         }, 
     },

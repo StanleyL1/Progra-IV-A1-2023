@@ -100,6 +100,7 @@
     </div>
 </template>
 <script>
+import alertifyjs from 'alertifyjs';
 import axios from 'axios';
 
     export default{
@@ -142,6 +143,12 @@ import axios from 'axios';
                     method,
                     data: this.alumno
                 }).then(resp=>{
+                    if( resp.data.msg=='ok' ){
+                        let msg = method=='DELETE' ? 'Alumno eliminado con exito' : 'Alumno registrado con exito.';
+                        alertifyjs.success(msg);
+                    }else{
+                        alertifyjs.error('El registro del alumno fallo, por favor revise');
+                    }
                     console.log('exito', resp);
                 }).catch(err=>{
                     console.log('error', err);
