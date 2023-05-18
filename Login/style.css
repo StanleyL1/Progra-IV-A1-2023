@@ -26,8 +26,24 @@
 
 .blue-panel {
     width: 40%;
-    background-color: blue;
-    padding: 20px;
+    background-color: #0b1e4b;
+    padding: 35px;
     box-sizing: border-box;
     color: white;
 }
+.container h2 {
+    margin-left: 15%;
+    font-size: 25px;
+    text-align: center;
+}
+
+.container label {
+    font-size: 18px;
+} 
+
+.button {
+    margin-left: 52%;
+    margin-top: 32%;
+    background-color: #0b1e4b;
+    color: white;
+;}
