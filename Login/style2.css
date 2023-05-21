@@ -10,10 +10,10 @@
  
 
 .card {
-    width: 400px;
+    width: 500px;
     height: 300px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 20px;
     box-sizing: border-box;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -23,11 +23,15 @@
     width: 60%;
     margin-right: 10%;
 }
+.container p{
+    font-size: 140%;
+    text-align: center;
 
+}
 .blue-panel {
-    width: 40%;
-    background-color: #0b1e4b;
-    padding: 35px;
+    width: 24%;
+    background-color: #0a0c11;
+    padding: 80px;
     box-sizing: border-box;
     color: white;
 }
@@ -44,6 +48,23 @@
 .button {
     margin-left: 52%;
     margin-top: 32%;
-    background-color: #0b1e4b;
+    border-radius: 10px;
+    background-color: blue;
     color: white;
 ;}
+.container li {
+    color: white;
+}
+
+.container li a {
+    text-align: center;
+    color: grey;
+}
+
+
+
+
+/*.{
+    background-color:rgba(166, 191, 250, 0.311);
+}*/
+
