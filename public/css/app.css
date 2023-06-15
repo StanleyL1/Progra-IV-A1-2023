@@ -1,0 +1,396 @@
+body {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 16px;
+    line-height: 1.4;
+    background-color: #e5e7e9;
+    display: flex;
+    flex-direction: column;  /* Esto hace que los elementos hijos de body se apilen verticalmente */
+    min-height: 100vh;
+}
+
+.navbar-custom {
+	background-color: #1a2b4c;
+	border-bottom: 1px solid #345b8c ;
+}
+
+.navbar-margin {
+	margin-left: 32em !important;
+}
+
+.nav-item {
+	border-right: 1px solid #345b8c;
+}
+
+.nav-item:last-child {
+	border-right: none;
+}
+
+.hero-section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 3rem 0;
+	gap: 2rem;
+	background-color: #fff;
+	border-radius: 20px;
+	box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-section {
+	padding: 4rem 0;
+}
+
+.feature-section .col-md-5 {
+	background-color: #fff;
+	border-radius: 20px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	padding: 2rem;
+	margin-bottom: 1.5rem;
+
+	
+
+}
+body > .container {
+    margin-bottom: 60px;  /* Ajusta este valor al tamaño de tu footer */
+}
+.hero-text {
+	max-width: 500px;
+}
+img.img-fluid {
+	border-radius: 5px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+
+    margin-top: auto !important;
+	background-color: #1a2b4c;
+	color: white;
+}
+
+.footer a {
+	color: white;
+}
+
+@media (max-width: 991.98px) {
+	.nav-item {
+		border-right: none;
+		border-bottom: 1px solid #345b8c;
+	}
+
+	.nav-item:last-child {
+		border-bottom: none;
+	}
+
+	.navbar-margin {
+		margin-left: 1px !important;
+		margin-top: 4em !important;
+	}
+
+	.hero-section {
+		flex-direction: column;
+		text-align: center;
+	}
+}
+
+.headplan{
+	color: #ffffff;
+}
+
+.panel-blanco{
+	background-color: #ffffff;
+	margin: 20px;
+	border-radius: 5px;
+	border: 1px solid #345b8c;
+	
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+.btn-a-brc-tp:not(.disabled):not(:disabled).active, .btn-brc-tp, .btn-brc-tp:focus:not(:hover):not(:active):not(.active):not(.dropdown-toggle), .btn-h-brc-tp:hover, .btn.btn-f-brc-tp:focus, .btn.btn-h-brc-tp:hover {
+    border-color: transparent;
+}
+.btn-outline-blue {
+    color: #0d6ce1;
+    border-color: #5a9beb;
+    background-color: transparent;
+}
+.btn {
+    cursor: pointer;
+    position: relative;
+    z-index: auto;
+    border-radius: .175rem;
+    transition: color .15s,background-color .15s,border-color .15s,box-shadow .15s,opacity .15s;
+}
+.border-2 {
+    border-width: 2px!important;
+    border-style: solid!important;
+    border-color: transparent;
+}
+.bgc-white {
+    background-color: #fff!important;
+}
+
+
+.text-green-d1 {
+    color: #277b5d!important;
+}
+.letter-spacing {
+    letter-spacing: .5px!important;
+}
+.font-bolder, .text-600 {
+    font-weight: 700!important;
+}
+.text-170 {
+    font-size: 1.7em!important;
+}
+
+.text-purple-d1 {
+    color: #6d62b5!important;
+}
+
+.text-primary-d1 {
+    color: #276ab4!important;
+}
+.text-secondary-d1 {
+    color: #5f718b!important;
+}
+.text-180 {
+    font-size: 1.8em!important;
+}
+.text-150 {
+    font-size: 1.5em!important;
+}
+.text-danger-m3 {
+    color: #e05858!important;
+}
+.rotate-45 {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.position-l {
+    left: 0;
+}
+.position-b, .position-bc, .position-bl, .position-br, .position-center, .position-l, .position-lc, .position-r, .position-rc, .position-t, .position-tc, .position-tl, .position-tr {
+    position: absolute!important;
+    display: block;
+}
+.mt-n475, .my-n475 {
+    margin-top: -2.5rem!important;
+}
+.ml-35, .mx-35 {
+    margin-left: 1.25rem!important;
+}
+
+.text-dark-l1 {
+    color: #56585e!important;
+}
+.text-90 {
+    font-size: .9em!important;
+}
+.text-left {
+    text-align: left!important;
+}
+
+.mt-25, .my-25 {
+    margin-top: .75rem!important;
+}
+
+.text-110 {
+    font-size: 1.1em!important;
+}
+
+.deleted-text{
+text-decoration:line-through;;    
+}
+
+body.background {
+    background-color: black;
+}
+
+.panelazul {
+    background-color: #1A2B4C;
+    color: white;
+}
+
+.panelblanco {
+    background-color: #FFFFFF;
+    border: 2px solid #000000;
+}
+
+.payment-method {
+    color: black;
+}
+
+.compra {
+    color: white;
+}
+
+.paypal {
+    background-color: #1A2B4C;
+    color: white;
+}
+
+.labelpaypal {
+    color: white;
+}
+
+.linea-negra {
+    border-top: 1px solid black;
+}
+.fondo{
+	width: 100%;
+	height: 40vh;
+	background-color: black;;
+}
+
+
+
+.card1 {
+    width: 700px;
+    height: 1020px;
+    margin: 0 auto;
+    margin-top: 50px;
+    position: relative;
+  }
+ 
+  /*.title {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 12px;
+    background-color: rgba(18, 126, 203, 0.637);
+  }
+*/
+
+.container1 h2{
+    background-color: rgba(59, 120, 253, 0.763);
+    width:315px;
+    border-radius: 12px;
+    border: black solid;
+    
+}
+  .subtitle {
+
+background-color: rgb(9, 9, 62);
+color: white;
+font-size: 15px;
+width: 32%;
+text-align:center;
+margin: 20px;
+
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+    padding-top: 5px;
+  }
+
+  .slider-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .slider {
+    flex: 1;
+  }
+
+  .input-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .input {
+    flex: 1;
+  }
+
+  .sub1{
+color: grey;
+
+}
+
+.sub2{
+    color: grey;
+    
+    }
+    
+  .sub3{
+    color: grey;
+    
+    }
+    
+  .sub4{
+    color: grey;
+    
+    }
+    
+  .sub5{
+    color: grey;
+    
+    }
+    .in1{
+        color: black;
+        font-size: 18px;
+         
+    }
+
+    .in2{
+        color: black;
+        font-size: 18px;
+         
+    }
+
+    .in3{
+        color: black;
+        font-size: 18px;
+         
+    } 
+
+    .range1 {
+        color: black;
+        font-size: 18px;
+         
+    }
+
+    .range2 {
+        color: black;
+        font-size: 18px;
+         
+    }
+
+    .range3 {
+        color: black;
+        font-size: 18px;
+         
+    }
+
+    .range4 {
+        color: black;
+        font-size: 18px;
+         
+    }
+
+    .range5 {
+        color: black;
+        font-size: 18px;
+         
+    }
+
+    .form-container1 {
+        text-decoration: none;
+    }
+
+    .form-container1 form{
+        align-items: start;
+    }
+
+    .panelhistorialsin {
+        border-radius: 19px;
+        border: 1px solid black;;
+        cursor: pointer;
+       
+    }
